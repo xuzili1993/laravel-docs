@@ -628,7 +628,7 @@ Laravel 也支持查询 JSON 类型的字段（仅在对 JSON 类型支持的数
 
     DB::table('users')->where('votes', '>', 100)->sharedLock()->get();
 
-或者，你也可以使用 `lockForUpdate` 方法。使用「更新」锁可避免行被其它共享锁修改或选取：
+或者，你也可以使用 `lockForUpdate` 方法。使用「排它」锁可避免行被其它共享锁修改或选取：
 
     DB::table('users')->where('votes', '>', 100)->lockForUpdate()->get();
 
